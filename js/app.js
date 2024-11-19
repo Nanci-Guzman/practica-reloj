@@ -1,48 +1,41 @@
-//Crear una web con un reloj que tenga la siguiente informacion: Lunes 18 de Noviembre en formato 24hs.
 function actualizarReloj() {
   const fechaElement = document.getElementById("fecha");
   const relojElement = document.getElementById("reloj");
 
+  // Crear la fecha actual
+  const fechaActual = new Date();
+
+  // Configuración de la fecha
   const opcionesFecha = {
     weekday: "long",
     day: "numeric",
     month: "long",
     year: "numeric",
   };
-  const fechaActual = new Date();
-
-  // Formato de fecha
   const fechaFormateada = fechaActual.toLocaleDateString(
     "es-ES",
     opcionesFecha
   );
   fechaElement.textContent = fechaFormateada;
 
-  // Formato de hora
+  // Configuración del reloj en formato AM/PM
   let horas = fechaActual.getHours();
   const minutos = fechaActual.getMinutes().toString().padStart(2, "0");
   const segundos = fechaActual.getSeconds().toString().padStart(2, "0");
-  let periodo = "";
+  let periodo = "AM";
 
   if (horas >= 12) {
     periodo = "PM";
-    if (horas > 12) horas -= 12; // Convertir a formato 12 horas
-  } else {
-    periodo = "AM";
-    if (horas === 0) horas = 12; // Para la medianoche
+    if (horas > 12) horas -= 12; // Convertir a formato de 12 horas
   }
 
-  const horaFormateada24h = `${fechaActual.getHours()}:${minutos}:${segundos}`;
-  const horaFormateada12h = `${horas}:${minutos}:${segundos} ${periodo}`;
+  if (horas === 0) horas = 12; // Medianoche es 12 AM
 
-  // Mostrar ambos formatos
-  relojElement.innerHTML = `
-      <div>24H: ${horaFormateada24h}</div>
-      <div>AM/PM: ${horaFormateada12h}</div>
-  `;
+  const horaFormateada = `${horas}:${minutos}:${segundos} ${periodo}`;
+  relojElement.textContent = horaFormateada;
 }
 
-// Actualizar cada segundo
+// Actualizar el reloj cada segundo
 setInterval(actualizarReloj, 1000);
 
 // Inicializar el reloj al cargar la página

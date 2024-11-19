@@ -12,11 +12,15 @@ body {
   color: #fff;
 }
 
-/* Contenedor de la fecha */
+.titulo {
+  font-size: 2.5em;
+  margin-bottom: 60px;
+}
+
 .fecha-container {
-  margin-bottom: 20px; /* Separación del reloj */
+  margin-bottom: 20px;
   text-align: center;
-  background-color: #4a4e69; /* Fondo más claro */
+  background-color: #4a4e69;
   padding: 20px;
   border-radius: 10px;
   width: 90%;
@@ -28,10 +32,9 @@ body {
   font-size: 1.5em;
 }
 
-/* Contenedor del reloj */
 .reloj-container {
   text-align: center;
-  background-color: #6c757d; /* Otro color claro */
+  background-color: #6c757d;
   padding: 20px;
   border-radius: 10px;
   width: 90%;
@@ -44,12 +47,16 @@ body {
   font-weight: bold;
 }
 
-/* Responsividad */
 @media (max-width: 600px) {
+  .titulo {
+    font-size: 2em;
+  }
+
   .fecha {
-      font-size: 1.2em;
+    font-size: 1.2em;
   }
 
   .reloj {
-      font-size: 2.5em;
+    font-size: 2.5em;
   }
+}
