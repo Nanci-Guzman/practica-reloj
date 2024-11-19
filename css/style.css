@@ -1,0 +1,55 @@
+/* Estilos generales */
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #1a1a2e; /* Fondo azul oscuro */
+  font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  color: #fff;
+}
+
+/* Contenedor de la fecha */
+.fecha-container {
+  margin-bottom: 20px; /* Separación del reloj */
+  text-align: center;
+  background-color: #4a4e69; /* Fondo más claro */
+  padding: 20px;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 600px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+.fecha {
+  font-size: 1.5em;
+}
+
+/* Contenedor del reloj */
+.reloj-container {
+  text-align: center;
+  background-color: #6c757d; /* Otro color claro */
+  padding: 20px;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 600px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+.reloj {
+  font-size: 3em;
+  font-weight: bold;
+}
+
+/* Responsividad */
+@media (max-width: 600px) {
+  .fecha {
+      font-size: 1.2em;
+  }
+
+  .reloj {
+      font-size: 2.5em;
+  }
